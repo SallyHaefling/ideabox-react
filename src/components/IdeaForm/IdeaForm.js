@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 
 export default class IdeaForm extends Component {
-  constructor() {
-    super();
-    this.state = {
+  constructor(props) {
+    super(props);
+    this.state={
       title: '',
       body: ''
     }
@@ -17,31 +17,28 @@ export default class IdeaForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.addIdea(this.state);
+    this.props.addIdea(this.state)
     this.setState({
-      title: '',
-      body: ''
+      title: '', body: ''
     })
   }
 
   render() {
-    return (
+    return(
       <form onSubmit={this.handleSubmit}>
-        <label htmlFor='title-input'>Title</label>
         <input 
-          id='title-input' 
-          value={this.state.title} 
-          name='title' 
-          onChange={this.handleChange} 
-        />
-        <label htmlFor='body-input'>Body</label>
-        <input 
-          id='body-input' 
-          value={this.state.body} 
-          name='body' 
+          value={this.state.title}
+          id='title'
+          name='title'
           onChange={this.handleChange}
         />
-        <button>Submit</button>
+        <input 
+          value={this.state.body}
+          id='body'
+          name='body'
+          onChange={this.handleChange}
+        />
+        <button>submit</button>
       </form>
     )
   }
