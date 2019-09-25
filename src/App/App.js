@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-// import IdeaForm from './IdeaForm';
+import IdeaForm from '../IdeaForm/IdeaForm';
 // import IdeaContainer from './IdeaContainer';
 import { connect } from 'react-redux';
 import { createIdea } from '../actions';
@@ -27,6 +27,7 @@ removeIdea = (id) => {
     return(
       <div>
         <h1>IdeaBox</h1>
+        <IdeaForm addIdea={this.addIdea}/>
       </div>
     )
   }
