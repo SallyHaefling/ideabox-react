@@ -1,18 +1,26 @@
 import React, {Component} from 'react';
-// import IdeaCard from './IdeaCard';
+// import IdeaForm from './IdeaForm';
 // import IdeaContainer from './IdeaContainer';
+import { connect } from 'react-redux';
+import { createIdea } from '../actions';
+import { deleteIdea } from '../actions';
 
-export default class App extends Component {
+class App extends Component {
   constructor() {
-    super();
-    this.state={
-      ideas: []
-    }
+  super();
+  this.state = {
+
+  }
   }
 
 addIdea = (idea) => {
   const newIdea = {title: idea, body: idea.body, id: Date.now()};
   this.props.createIdea(newIdea);
+}
+
+removeIdea = (id) => {
+  const oldIdea = this.props.ideas.filter(idea => idea.id !== id)
+  this.props.deleteIdea(oldIdea);
 }
 
   render() {
@@ -23,3 +31,14 @@ addIdea = (idea) => {
     )
   }
 }
+
+export const mapStateToProps = (state) => ({
+  ideas: state.ideas
+})
+
+export const mapDispatchToProps = (dispatch) => ({
+  createIdea: (newIdea) => dispatch(createIdea(newIdea)),
+  deleteIdea: (oldIdea) => dispatch(deleteIdea(oldIdea))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
