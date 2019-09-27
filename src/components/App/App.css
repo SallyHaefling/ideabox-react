@@ -1,0 +1,9 @@
+body {
+  background-image: url('subtle.png');
+}
+
+.app-header {
+  text-align: center;
+  font-size: 100px;
+}
+
