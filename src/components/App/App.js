@@ -4,7 +4,7 @@ import IdeaContainer from '../IdeaContainer/IdeaContainer';
 import { connect } from 'react-redux';
 import { createIdea } from '../../actions';
 import { deleteIdea } from '../../actions';
-
+import './App.css';
 
 class App extends Component {
   constructor() {
@@ -26,8 +26,8 @@ class App extends Component {
 
   render() {
     return(
-      <div>
-        <h1>Ideabox</h1>
+      <div className='app-container'>
+        <h1 className='app-header'>ideabox.</h1>
         <IdeaForm addIdea={this.addIdea}/>
         <IdeaContainer ideas={this.props.ideas}
           removeIdea={this.removeIdea}

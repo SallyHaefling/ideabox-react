@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './IdeaForm.css';
 
 export default class IdeaForm extends Component {
   constructor(props) {
@@ -25,20 +26,22 @@ export default class IdeaForm extends Component {
 
   render() {
     return(
-      <form onSubmit={this.handleSubmit}>
+      <form className='idea-form' onSubmit={this.handleSubmit}>
         <input 
+          className='title input'
           value={this.state.title}
           id='title'
           name='title'
           onChange={this.handleChange}
         />
         <input 
+          className='body input'
           value={this.state.body}
           id='body'
           name='body'
           onChange={this.handleChange}
         />
-        <button>submit</button>
+        <button className='submit-btn'>Submit an idea!</button>
       </form>
     )
   }

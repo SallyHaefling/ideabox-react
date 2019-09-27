@@ -1,0 +1,21 @@
+.idea-form {
+  display: flex;
+  justify-content: center;
+}
+
+.input {
+  margin: 10px;
+  border-radius: 4px;
+  height: 25px;
+  width: 150px;
+  border: 1px solid #bcbcbc;
+}
+
+.submit-btn {
+  border: 1px solid #bcbcbc;
+  border-radius: 4px;
+  cursor: pointer;
+  height: 30px;
+  width: 100px;
+  margin-top: 11px;
+}
