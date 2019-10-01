@@ -12,10 +12,17 @@
 }
 
 .submit-btn {
-  border: 1px solid #bcbcbc;
+  border: 1px solid #2b2727;
   border-radius: 4px;
   cursor: pointer;
   height: 30px;
   width: 100px;
   margin-top: 11px;
+}
+
+.submit-btn:hover {
+  border: 1px solid #000000;
+  box-shadow: 2px 2px 2px #464040;
+  font-weight: bold;
+  padding: 5px;
 }
